@@ -15,20 +15,21 @@
  * is to expose you to the idea of using a config file to govern the behaviour of a program.
  */
 
-export = {
+module.exports = {
   type: "postgres",
   host: process.env.DB_HOST || "localhost",
   port: process.env.DB_PORT || 5432,
-  username: process.env.DB_USER || "expense_manager",
-  password: process.env.DB_PASSWORD || "expense_manager",
-  database: process.env.DB_NAME || "expense_manager",
-  entities: ["src/entities/**/*.ts"],
+  username: process.env.DB_USER || "postgres",
+  password: process.env.DB_PASSWORD || "bekind",
+  database: process.env.DB_NAME || "wow_character",
+  entities: ["src/entity/**/*.ts"],
   migrations: ["src/migrations/**/*.ts"],
   seeds: ["src/seeds/**/*.ts"],
   logging: false,
+  
   migrationsRun: false /* Disable auto-run migration */,
   cli: {
-    entitiesDir: "src/entities",
+    entitiesDir: "src/entity",
     migrationsDir: "src/migrations",
   },
 };

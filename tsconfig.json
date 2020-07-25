@@ -1,15 +1,22 @@
-{
-   "compilerOptions": {
-      "lib": [
-         "es5",
-         "es6"
-      ],
-      "target": "es5",
-      "module": "commonjs",
-      "moduleResolution": "node",
-      "outDir": "./build",
-      "emitDecoratorMetadata": true,
-      "experimentalDecorators": true,
-      "sourceMap": true
-   }
-}
+{  
+    "compilerOptions":{  
+       "module":"commonjs",
+       "moduleResolution":"node",
+       "pretty":true,
+       "sourceMap":true,
+       "outDir":"./dist",
+       "baseUrl":"./src",
+       "emitDecoratorMetadata":true,
+       "experimentalDecorators":true,
+       "target":"es6",
+       "typeRoots":[  
+          "node_modules/@types"
+       ]
+    },
+    "include":[  
+       "src/**/*.ts", "src/ormconfig.js"
+    ],
+    "exclude":[  
+       "node_modules"
+    ]
+ }
