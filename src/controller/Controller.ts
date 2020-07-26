@@ -49,6 +49,7 @@ class Controller {
         // return loaded posts
         response.send(posts);
     };
+    
     public async deleteMember(req: Request, res: Response){
         // get a post repository to perform operations with post
         const postRepository = getManager().getRepository(GuildMember);
@@ -59,6 +60,7 @@ class Controller {
         // return loaded posts
         res.send(posts);
     };
+
     public async updateMember(req: Request, res: Response){
         // get a post repository to perform operations with post
         const postRepository = getManager().getRepository(GuildMember);
