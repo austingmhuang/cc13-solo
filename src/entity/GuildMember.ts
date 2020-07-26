@@ -1,4 +1,4 @@
-import {Column, Entity, OneToMany, PrimaryGeneratedColumn} from "typeorm";
+import {Column, Entity, OneToMany, PrimaryGeneratedColumn, CreateDateColumn} from "typeorm";
 import Skill from "./Skill";
 @Entity()
 export class GuildMember {
@@ -12,6 +12,15 @@ export class GuildMember {
 
     @Column({nullable:true})
     public race: string;
+
+    @Column({nullable:true})
+    public specialization: string;
+
+    @Column({nullable:true})
+    public itemLevel: number;
+
+    @CreateDateColumn()
+    public lastPlayed: Date;
 
     @OneToMany(
                () => Skill,

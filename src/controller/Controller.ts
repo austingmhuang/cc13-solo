@@ -1,7 +1,5 @@
 import {Request, Response} from 'express';
-import connection from "../database";
 import GuildMember from "../entity/GuildMember";
-import Skill from "../entity/Skill";
 import {getManager} from "typeorm";
 
 class Controller {
@@ -22,54 +20,61 @@ class Controller {
 
     public async getById(req: Request, res: Response) {
     // get a post repository to perform operations with post
-        const postRepository = getManager().getRepository(GuildMember);
+        const memberRepository = getManager().getRepository(GuildMember);
 
-        // load a post by a given post id
-        const post = await postRepository.findOne(req.params.id);
+        // get by Id
+        const member = await memberRepository.findOne(req.params.id);
 
         // if post was not found return 404 to the client
-        if (!post) {
+        if (!member) {
             res.status(404);
             res.end();
             return;
         }
 
         // return loaded post
-        res.send(post);
+        res.send(member);
     }
 
     public async getAllMembers(request: Request, response: Response) {
 
         // get a post repository to perform operations with post
-        const postRepository = getManager().getRepository(GuildMember);
+        const memberRepository = getManager().getRepository(GuildMember);
     
-        // load a post by a given post id
-        const posts = await postRepository.find();
+        // get all
+        const member = await memberRepository.find();
     
-        // return loaded posts
-        response.send(posts);
+        // return loaded member
+        response.send(member);
     };
     
     public async deleteMember(req: Request, res: Response){
         // get a post repository to perform operations with post
-        const postRepository = getManager().getRepository(GuildMember);
+        const memberRepository = getManager().getRepository(GuildMember);
     
-        // load a post by a given post id
-        const posts = await postRepository.delete(req.params.id);
+        // delete by id
+        const member = await memberRepository.delete(req.params.id);
     
-        // return loaded posts
-        res.send(posts);
+        // return loaded member
+        res.send(member);
     };
 
     public async updateMember(req: Request, res: Response){
         // get a post repository to perform operations with post
-        const postRepository = getManager().getRepository(GuildMember);
+        const memberRepository = getManager().getRepository(GuildMember);
     
-        // load a post by a given post id
-        const posts = await postRepository.update(req.params.name, req.body.name);
+        // update
+        const member = await memberRepository.findOne(req.params.id);
+        member.class = req.body.class;
+        member.itemLevel = req.body.itemLevel;
+        member.lastPlayed = req.body.lastPlayed;
+        member.race = req.body.race;
+        member.specialization = req.body.specialization;
+        member.name = req.body.name;
     
-        // return loaded posts
-        res.send(posts);
+        await memberRepository.save(member);
+        // return loaded member
+        res.send(member);
     }
 }
 export {Controller}

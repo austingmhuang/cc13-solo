@@ -21,7 +21,7 @@ module.exports = {
   port: process.env.DB_PORT || 5432,
   username: process.env.DB_USER || "postgres",
   password: process.env.DB_PASSWORD || "bekind",
-  database: process.env.DB_NAME || "wow_character",
+  database: process.env.DB_NAME || "test_guild",
   entities: ["src/entity/**/*.ts"],
   migrations: ["src/migrations/**/*.ts"],
   seeds: ["src/seeds/**/*.ts"],

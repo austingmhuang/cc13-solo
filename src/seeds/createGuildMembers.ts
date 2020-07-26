@@ -36,15 +36,27 @@ export default class CreateGuildMember
         .createQueryBuilder()
         .insert()
         .into(GuildMember)
-        .values({
-            "name": "LoverMan",
+        .values([{
+            "name": "LiarGame",
+            "race": "Blood elf",
+            "class": "Priest",
+            "specialization": "Shadow",
+            "itemLevel" : 474,
             "skills": [{
-                    "abilities" : "LOVE"
+                    "description" : "Good mechanics"
             },
                     {
-                    "abilities" : "DOVE"
+                    "description" : "Consistent player"
                     }]
-        })
+        }, {"name" : "Kalluthos",             "race": "Blood elf",
+        "class": "Death Knight",
+        "specialization": "Unholy",
+        "itemLevel" : 478, "skills": [{
+            "description" : "Good mechanics"
+    },
+            {
+            "description" : "Consistent player"
+            }]}])
         .execute()
     }
 }

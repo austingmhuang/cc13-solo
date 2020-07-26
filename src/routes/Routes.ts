@@ -13,15 +13,13 @@ class Routes {
                         message: "GET request successfully."
                     });
             });
-// following code is to handle http://localhost:3000/superHero request.
         app.route('/guildmember')
             .post(this.controller.addMember)
             .get(this.controller.getAllMembers);
-        app.route('/guildmember/?id')
+        app.route('/guildmember/:id')
             .get(this.controller.getById)
             .delete(this.controller.deleteMember)
             .patch(this.controller.updateMember);
-
     }
 }
 export {Routes};

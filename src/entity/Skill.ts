@@ -5,7 +5,7 @@ export class Skill {
     @PrimaryGeneratedColumn()
     public id: number;
     @Column()
-    public abilities: string;
+    public description: string;
     @ManyToOne(() => GuildMember, (guildMember) => guildMember.skills)
     public guildMember: GuildMember;
 }
