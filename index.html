@@ -11,8 +11,10 @@
 <body>
   <h1>Heyo</h1>
   <div>You can find my git repository <a href='https://github.com/austingmhuang/cc13-solo'>here</a></div>
-  <div><span><b>GET /</b><br>Gets all guild members</span></div>
-  <div><span><b>GET /guildmember/:id</b><br>provides information on a specific idol</span></div>
+  <div><span><b>GET /guildmember</b><br>Gets all guild members</span>
+    <a href='http://localhost:3000/guildmember/'>here</a></div>
+  <div><span><b>GET /guildmember/:id</b><br>provides information on a specific guild member</span>
+    <a href='http://localhost:3000/guildmember/5'>here</a></div>
   <div><span><b>POST /guildmember</b><br>requires an ID, Name. Race/Class/Skills optional</span></div>
   <div><span><b>PATCH /guildmember/:id</b><br>requires an ID. Lets you modify an guild member's information</span></div>
   <div><span><b>DELETE /guildmember/:id</b><br>deletes a guild member from the table</span></div>
