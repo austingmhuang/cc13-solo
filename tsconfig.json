@@ -8,13 +8,14 @@
        "baseUrl":"./src",
        "emitDecoratorMetadata":true,
        "experimentalDecorators":true,
+       "esModuleInterop": true,
        "target":"es6",
        "typeRoots":[  
           "node_modules/@types"
        ]
     },
     "include":[  
-       "src/**/*.ts", "src/ormconfig.js"
+       "src/**/*.ts", "ormconfig.js"
     ],
     "exclude":[  
        "node_modules"

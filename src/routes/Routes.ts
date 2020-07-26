@@ -14,9 +14,10 @@ class Routes {
                     });
             });
 // following code is to handle http://localhost:3000/superHero request.
-        app.route('/superHero')
-            .get(this.controller.getAllSuperHero)
-            .post(this.controller.addSuperHero);
+        app.route('/guild')
+            .post(this.controller.addMember)
+            .get(this.controller.getAllMembers);
+            //.post(this.controller.addSuperHero);
     }
 }
 export {Routes};
